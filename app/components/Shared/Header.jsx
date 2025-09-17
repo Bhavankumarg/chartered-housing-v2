@@ -79,8 +79,8 @@ const Header = () => {
           <Image
             src="/logo.png"
             alt="CHARTERED"
-            width={200}
-            height={60}
+            width={70}
+            height={70}
           />
         </Link>
       </div>
