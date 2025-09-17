@@ -1,26 +1,273 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+* {
+  font-family: "Nunito", sans-serif;
+}
+/* Roboto Serif Font Imports */
+@font-face {
+  font-family: "Roboto Serif";
+  src: url("./font/Roboto_Serif/RobotoSerif-VariableFont_GRAD,opsz,wdth,wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@font-face {
+  font-family: "Roboto Serif";
+  src: url("./font/Roboto_Serif/RobotoSerif-Italic-VariableFont_GRAD,opsz,wdth,wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Nunito Font Imports */
+@font-face {
+  font-family: "Nunito";
+  src: url("./font/Nunito/Nunito-VariableFont_wght.ttf") format("truetype");
+  font-weight: 200 1000;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("./font/Nunito/Nunito-Italic-VariableFont_wght.ttf")
+    format("truetype");
+  font-weight: 200 1000;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Nunito Utility Classes */
+.nunito-regular {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.nunito-italic {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.nunito-bold {
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.nunito-bold-italic {
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.nunito-medium {
+  font-family: "Nunito", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.nunito-medium-italic {
+  font-family: "Nunito", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.nunito-semibold {
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.nunito-semibold-italic {
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.nunito-light {
+  font-family: "Nunito", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.nunito-light-italic {
+  font-family: "Nunito", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.nunito-extralight {
+  font-family: "Nunito", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.nunito-extralight-italic {
+  font-family: "Nunito", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.nunito-black {
+  font-family: "Nunito", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.nunito-black-italic {
+  font-family: "Nunito", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.nunito-extrabold {
+  font-family: "Nunito", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.nunito-extrabold-italic {
+  font-family: "Nunito", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.roboto-serif-regular {
+  font-family: "Roboto Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-serif-italic {
+  font-family: "Roboto Serif", serif;
+  font-weight: 400;
+}
+
+.roboto-serif-bold {
+  font-family: "Roboto Serif", serif;
+  font-weight: 700 !important;
+  font-style: normal;
+}
+
+.roboto-serif-bold-italic {
+  font-family: "Roboto Serif", serif;
+}
+
+.roboto-serif-medium {
+  font-family: "Roboto Serif", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.roboto-serif-medium-italic {
+  font-family: "Roboto Serif", serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.roboto-serif-semibold {
+  font-family: "Roboto Serif", serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.roboto-serif-semibold-italic {
+  font-family: "Roboto Serif", serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.roboto-serif-light {
+  font-family: "Roboto Serif", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.roboto-serif-light-italic {
+  font-family: "Roboto Serif", serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.roboto-serif-thin {
+  font-family: "Roboto Serif", serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.roboto-serif-thin-italic {
+  font-family: "Roboto Serif", serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.roboto-serif-black {
+  font-family: "Roboto Serif", serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.roboto-serif-black-italic {
+  font-family: "Roboto Serif", serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.roboto-serif-extrabold {
+  font-family: "Roboto Serif", serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.roboto-serif-extrabold-italic {
+  font-family: "Roboto Serif", serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.roboto-serif-extralight {
+  font-family: "Roboto Serif", serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.roboto-serif-extralight-italic {
+  font-family: "Roboto Serif", serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.roboto-serif-black {
+  font-family: "Roboto Serif", serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.roboto-serif-black-italic {
+  font-family: "Roboto Serif", serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.roboto-serif-extrabold {
+  font-family: "Roboto Serif", serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+p {
+  font-size: 20px;
+  font-weight: 400;
+  /* line-height: 24px; */
+  color: #646464;
+}
+@media (max-width: 768px) {
+  p {
+    font-size: 18px;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
