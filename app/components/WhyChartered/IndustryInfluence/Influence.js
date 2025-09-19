@@ -3,9 +3,9 @@ import Image from "next/image";
 const Influence = () => {
   return (
     <>
-      <div className="container mx-auto py-10 flex justify-between items-center gap-10">
+      <div className="container mx-auto py-20 flex justify-between items-center gap-10">
         <div className="flex flex-col gap-10">
-          <div className="flex lg:flex-row flex-col lg:gap-10 gap-5 items-center justify-center border-b border-[#ED1C25] lg:space-y-10 pb-5 lg:pb-0">
+          <div className="flex lg:flex-row flex-col lg:gap-10 gap-5 items-start justify-center border-b border-[#ED1C25] lg:space-y-10 pb-5 lg:pb-0">
             <Image
               src="/why-chartered/abh.png"
               alt="Aerya Balakrishna Hegde"

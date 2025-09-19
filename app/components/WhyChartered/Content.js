@@ -4,7 +4,7 @@ const Content = () => {
   return (
     <>
       <div className="lg:px-0 px-5">
-        <div className="container mx-auto lg:py-10 py-5">
+        <div className="container mx-auto lg:py-20 py-5">
           <div className="flex flex-col items-center justify-center gap-7">
             <h6 className=" lg:text-[30px] text-[20px] text-[#646464] text-left">
               For over three decades, we have earned the trust of homeowners,

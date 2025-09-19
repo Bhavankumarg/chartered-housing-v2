@@ -8,8 +8,8 @@ const TeamTabs = () => {
   const [active, setActive] = useState(team[0]);
 
   return (
-    <section className="w-full pb-16 bg-white hidden lg:block">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-start">
+    <section className="w-full pb-16 bg-white hidden lg:block container mx-auto">
+      <div className=" grid md:grid-cols-2 gap-10 items-start">
         {/* Left Tabs */}
         <div className="space-y-6">
           {team.map((member) => (

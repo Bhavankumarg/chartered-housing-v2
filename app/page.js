@@ -1,14 +1,10 @@
 import React from "react";
-import Header from "./components/Shared/Header";
-import Banner from "./components/Shared/Banner";
+import Home from "./components/Home";
 
 const page = () => {
   return (
     <>
-      <div className="relative">
-        <Banner />
-        <Header />
-      </div>
+      <Home />
     </>
   );
 };

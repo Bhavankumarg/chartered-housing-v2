@@ -39,28 +39,29 @@ const Header = () => {
     {
       label: "OUR PROJECTS",
       submenu: [
-        { name: "Residential", href: "/projects/residential" },
-        { name: "Commercial", href: "/projects/commercial" },
+        { name: "Ongoing Projects", href: "/projects/ongoing" },
         { name: "Upcoming Projects", href: "/projects/upcoming" },
         { name: "Completed Projects", href: "/projects/completed" },
+        { name: "Commercial Projects", href: "/projects/commercial" },
       ],
     },
     {
       label: "COMPANY",
       submenu: [
         { name: "About Us", href: "/about-us" },
-        { name: "Our Team", href: "/team" },
+        { name: "Visionary Leadership", href: "/visionary-leadership" },
+        { name: "Why Chartered", href: "/why-chartered" },
+        { name: "Chartered Interiors", href: "/chartered-interiors" },
         { name: "Careers", href: "/careers" },
-        { name: "News & Updates", href: "/news" },
+        { name: "CSR Activities", href: "/csr-activities" },
       ],
     },
     {
       label: "CONNECT",
       submenu: [
-        { name: "Contact Us", href: "/contact" },
-        { name: "Support", href: "/support" },
-        { name: "Newsletter", href: "/newsletter" },
-        { name: "Social Media", href: "/social" },
+        { name: "Request a Callback", href: "/request-a-callback" },
+        { name: "WhatsApp", href: "/whatsapp-us" },
+        { name: "Partner with Us", href: "/partner-with-us" },
       ],
     },
   ];
@@ -70,7 +71,24 @@ const Header = () => {
     setIsMenuOpen(false);
     setOpenDropdown(null);
   };
+  const [logoSize, setLogoSize] = useState({ width: 100, height: 100 });
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        setLogoSize({ width: 70, height: 70 }); // mobile
+      } else {
+        setLogoSize({ width: 80, height: 80 }); // desktop
+      }
+    };
+
+    // Run on mount
+    handleResize();
+
+    // Listen for resize
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <>
       {/* Logo - Global on all pages */}
@@ -79,8 +97,9 @@ const Header = () => {
           <Image
             src="/logo.png"
             alt="CHARTERED"
-            width={70}
-            height={70}
+            width={logoSize.width}
+            height={logoSize.height}
+            className="cursor-pointer"
           />
         </Link>
       </div>
@@ -89,8 +108,11 @@ const Header = () => {
       <header className="absolute top-0 left-0 right-0 z-40 bg-white">
         <div className="flex items-center justify-between px-6 lg:px-0 py-4 container mx-auto">
           {/* Enquire Now Button */}
-          <Button href="/contact">Enquire Now</Button>
+          <div className="hidden lg:block">
+            <Button href="/contact">Enquire Now</Button>
+          </div>
 
+          {/* Animated Hamburger Menu */}
           {/* Animated Hamburger Menu */}
           <MotionConfig
             transition={{
@@ -102,7 +124,7 @@ const Header = () => {
               initial={false}
               animate={isMenuOpen ? "open" : "closed"}
               onClick={toggleMenu}
-              className="relative h-16 w-12 rounded-full bg-transparent transition-colors"
+              className="relative h-16 w-12 rounded-full bg-transparent transition-colors ml-auto"
             >
               <motion.span
                 variants={VARIANTS.top}
@@ -137,15 +159,15 @@ const Header = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 top-35 z-50 bg-gray-200 flex items-center justify-center"
+            className="fixed inset-0 top-20 z-20 bg-gray-200 flex items-center justify-center"
           >
-            <div className="text-center space-y-16">
+            <div className="text-center lg:space-y-7 space-y-5">
               {menuItems.map((item) => (
                 <div key={item.label} className="relative">
                   {/* Main Menu Item */}
                   <div
                     onClick={() => toggleDropdown(item.label)}
-                    className="text-[#646464] text-4xl roboto-serif-light tracking-wider flex items-center justify-center cursor-pointer hover:text-[#ED1C25] transition-all duration-300 hover:scale-105"
+                    className="text-[#646464] text-3xl roboto-serif-light tracking-wider flex items-center justify-center cursor-pointer hover:text-[#ED1C25] transition-all duration-300 hover:scale-105"
                   >
                     {item.label}
                     <motion.svg
@@ -169,10 +191,10 @@ const Header = () => {
                   <AnimatePresence>
                     {openDropdown === item.label && (
                       <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.2 }}
                         className="overflow-hidden"
                       >
                         <div className="pt-8 space-y-6">
@@ -192,6 +214,13 @@ const Header = () => {
                   </AnimatePresence>
                 </div>
               ))}
+
+              {/* Mobile Enquire Now Button */}
+              <div className="lg:hidden flex justify-center">
+                <Button href="/contact" onClick={handleSubmenuClick}>
+                  Enquire Now
+                </Button>
+              </div>
             </div>
           </motion.div>
         )}

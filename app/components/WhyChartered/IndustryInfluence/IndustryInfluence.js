@@ -4,7 +4,7 @@ import Influence from "./Influence";
 const IndustryInfluence = () => {
   return (
     <>
-      <div className="container mx-auto lg:py-10 pt-10 flex lg:flex-row flex-col lg:px-0 px-5 justify-between items-center lg:gap-10">
+      <div className="container mx-auto lg:pt-20 pt-10 flex lg:flex-row flex-col lg:px-0 px-5 justify-between items-center lg:gap-10">
         <div className="container mx-auto">
           <h3 className="text-[#ED1C24] roboto-serif-medium tracking-wide text-2xl uppercase">
             Industry

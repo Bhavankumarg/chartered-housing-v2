@@ -37,12 +37,12 @@ const CharteredCarousel = () => {
         <AnimatePresence mode="wait">
           <motion.p
             key={index}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -20 }}
             transition={{ duration: 0.5 }}
           >
-            <span className="text-[#646464] roboto-serif-regular text-3xl md:text-4xl">
+            <span className="text-[#646464] roboto-serif-italic text-3xl md:text-5xl">
               {carouselItems[index]}
             </span>
           </motion.p>

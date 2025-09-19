@@ -22,7 +22,7 @@ const achievements = [
 
 const Achievements = () => {
   return (
-    <section className="bg-black text-white py-16 lg:px-0 px-5">
+    <section className="bg-black text-white py-20 lg:px-0 px-5">
       {/* Heading */}
       <div className="container mx-auto">
         <h3 className="text-[#ED1C24] roboto-serif-medium tracking-wide text-2xl uppercase">
@@ -47,7 +47,7 @@ const Achievements = () => {
           {achievements.map((item, idx) => (
             <div
               key={idx}
-              className={`relative ${idx < 3 ? "lg:border-r border-b lg:pb-0 pb-5" : ""} border-[#ED1C25]`}
+              className={`relative ${idx < 3 ? "lg:border-r lg:border-b-0 border-b lg:pb-0 pb-5" : ""} border-[#ED1C25]`}
             >
               <h3 className="text-[#ED1C25] font-semibold mb-3 lg:text-lg text-2xl">
                 {item.title}
