@@ -161,7 +161,7 @@ const Header = () => {
             transition={{ duration: 0.3 }}
             className="fixed inset-0 top-20 z-20 bg-gray-200 flex items-center justify-center"
           >
-            <div className="text-center lg:space-y-7 space-y-5">
+            <div className="text-center lg:space-y-10 space-y-5">
               {menuItems.map((item) => (
                 <div key={item.label} className="relative">
                   {/* Main Menu Item */}
@@ -191,10 +191,10 @@ const Header = () => {
                   <AnimatePresence>
                     {openDropdown === item.label && (
                       <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.2 }}
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
                         className="overflow-hidden"
                       >
                         <div className="pt-8 space-y-6">
